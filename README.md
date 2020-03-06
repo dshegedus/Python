@@ -1,4 +1,4 @@
-### Personal Savings Calculator. Since I have my bike, I can save upto £11/day on transport. (30Km
+### Personal Savings Calculator. Since I have my bike, I can save upto £11/day on transport. 
 ### Additionally, £5/day per meal at work if I bring my lunch.
 ### These savings will exclude days when I can claim expenses.
 
