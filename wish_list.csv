@@ -1,6 +1,6 @@
-item,price,cycle_days,cycle_meal_days
-Bicycle,£300,27,14
-Wedding,£300,27,15
-Easter,£250,23,16
-Damon,£80,7,5
-Laptop,"£1,000",91,63
+item,price
+Bicycle,300
+Wedding,300
+Easter,250
+Damon,80
+Laptop,1000

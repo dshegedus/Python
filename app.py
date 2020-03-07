@@ -15,7 +15,7 @@ while int(menu_decision) not in [1, 2, 3, 4]:
          print("Oops! Please give a valid number from the menu. \n")
 
 
-if int(menu_decision) == 1:
+if menu_decision == 1:
 
     with open("savings.csv") as csvfile:
         readCSV = csv.reader(csvfile)
@@ -38,15 +38,29 @@ if int(menu_decision) == 1:
     sum_meals = sum(meals)
     total_savings = (sum_cycles * transport_fee) + (sum_meals * meal_fee)
 
-    print ("So far you have saved a total of £",total_savings, "\n by cycling to work ",sum_cycles, "times" "\n and bringing",sum_meals, "meals to work.")
+    print (" So far you have saved a total of £{}\n by cycling to work {} times\n and bringing {} meals to work.".format(total_savings, sum_cycles, sum_meals))
 
     
-elif int(menu_decision) == 2:
+elif menu_decision == 2:
     print("this2")
 
 
-elif int(menu_decision) == 3:
+elif menu_decision == 3:
     with open("wish_list.csv") as csvfile:
         reader = csv.DictReader(csvfile)
         for row in reader:
-            print(row["item"], row["price"], row["cycle_days"] , row["cycle_meal_days"])
+            print("Item: {} £{}".format(row["item"], row["price"]))
+
+elif menu_decision == 4:
+    with open("wish_list.csv", "a") as wl:
+        writer = csv.writer(wl)
+
+        new_item = input("New wish name: \n")
+        new_price = input("New wish price: \n")
+
+        cycle_days = int(new_price) / transport_fee
+        cycle_meal_days = int(new_price) / (transport_fee + meal_fee)
+
+        writer.writerow([new_item, new_price])
+
+    print("{} with £{} has been added to your wish list. \n It will take an additional {:.2f} days of cycling \n OR {:.2f} days if you bring your own meal as well.".format(new_item.title(), new_price, cycle_days, cycle_meal_days))
